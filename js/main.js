@@ -26,15 +26,6 @@ function contraseñaUsuario() {
 }
 
 
-function seleccionarProducto() {
-
-    const prodcuto = prompt("Elija el producto: 1-Vianda Vegetariana 2-Vianda Carnivora 3-Vianda Vegana 4-Vianda Variada 0-Salir");
-
-    while (seleccionarProducto !== 0);
- 
-
-}
-
 
 // Función con parámetros
 
@@ -91,7 +82,19 @@ console.log("el nombre de usuario ingresado es: " + nombre);
 
 contraseñaUsuario();
 
-seleccionarProducto();
+const producto = prompt("Elija el producto: 1-Vianda Vegetariana 2-Vianda Carnivora 3-Vianda Vegana 4-Vianda Variada 0-Salir");
+
+if (producto == "1") {
+    precioVianda = 890;
+}
+else if (producto == "2") {
+    precioVianda = 980;
+}
+else if (producto == "3"); {
+    precioVianda = 1050;
+}
+console.log("La vianda seleccionada es: " + producto + " su precio es: " + precioVianda);
+
 
 const resultadoPrecioCantidad = packViandaPrecioCantidad(890, 30);
 console.log("El costo de su pack es: " + resultadoPrecioCantidad);
