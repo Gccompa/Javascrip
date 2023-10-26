@@ -5,7 +5,9 @@
 // Declarando variables 
 
 
+
 //Pre-entrega Nro 1 
+
 
 // Declaración de Funciones
 
@@ -26,55 +28,26 @@ function contraseñaUsuario() {
 }
 
 
-
 // Función con parámetros
 
 
+function oferta(cantidad) {
 
-function packViandaPrecioCantidad(precioVianda, combo) {
-
-    let resultadoPrecioCantidad = precioVianda * combo;
-
-    return resultadoPrecioCantidad;
+    if (cantidad === 30) 
+       
+    console.log("Tienes un 20% de descuento en tu compra y el envío gratis");
 }
 
 
-function oferta(combo, pagotransferencia) {
-
-    if (combo === 30 && pagotransferencia); {
-
-        console.log("Tienes un 20% de descuento en tu compra y el envío gratis");
-    }
-
-}
+// Declaración de Variables
 
 
-// Declaración de Variables 
-
-let precioVianda = 0;
-let combo = 0;
 let porcentaje = 0.20;
-const pagotransferencia = "transferencia"
-
-const vianda1 = "Vegetariana";
-let precioVianda1 = 890;
-
-const Vianda2 = "Carnivora";
-let precioVianda2 = 980;
-
-const vianda3 = "Vegana";
-let precioVianda3 = 1050;
-
-const vianda4 = "Variada";
-let precioVianda4 = 1100;
-
-const combo1Cant = 7;
-const combo2Cant = 14;
-const combo3Cant = 30;
+let totalConDescuento = 0;
+let precioTotal = 0;
 
 
-
-// Inicio del Programa 
+// Inicio del Programa
 
 
 const nombre = nombreUsuario();
@@ -82,35 +55,38 @@ console.log("el nombre de usuario ingresado es: " + nombre);
 
 contraseñaUsuario();
 
-const producto = prompt("Elija el producto: 1-Vianda Vegetariana 2-Vianda Carnivora 3-Vianda Vegana 4-Vianda Variada 0-Salir");
 
-if (producto == "1") {
-    precioVianda = 890;
+
+let producto = (prompt("Escriba el nombre de la vianda que desea agregar al carrito, de lo contrario escriba SALIR. Las viandas son: vegetariana - carnivora - vegano - variado"));
+let precioVianda;
+
+if (producto === "vegetariana") {
+    precioVianda = 890
+} else if (producto === "carnìvora") {
+    preciovianda = 980
+} else if (producto === "vegano") {
+    precioVianda = 1050
+} else if (producto === "variado") {
+    precioVianda = 1100
+} else {
+    alert("No ha ingresado ningún producto al carrito");
 }
-else if (producto == "2") {
-    precioVianda = 980;
+
+console.log("La vianda seleccionada es: " + producto + " su precio por unidad es: " + precioVianda);
+
+
+let cantidad = parseInt(prompt("Ingrese la cantidad de viandas, combo de: 7, 14 o 30"));
+
+if (cantidad === 7 || cantidad === 14 || cantidad === 30) {
+   precioTotal = precioVianda * cantidad;
+   console.log("Ustded debe abonar: " + precioTotal)
+
+} if (oferta(cantidad)) {
+   
 }
-else if (producto == "3"); {
-    precioVianda = 1050;
-}
-console.log("La vianda seleccionada es: " + producto + " su precio es: " + precioVianda);
+
+totalConDescuento = precioTotal - (precioTotal * porcentaje);
+alert("Con el descuento aplicado debe abonar: " + totalConDescuento);
 
 
-const resultadoPrecioCantidad = packViandaPrecioCantidad(890, 30);
-console.log("El costo de su pack es: " + resultadoPrecioCantidad);
-
-oferta();
-
-alert("El monto final es de $21.360");
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("fin del programa");
